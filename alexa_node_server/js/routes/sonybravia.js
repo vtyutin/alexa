@@ -17,42 +17,39 @@ router.post('/power',function(req,res){
     switch (power) {
         case "on":
             console.log("Wake up TV " + config.sony.ip);
-	    powerintent = 'active';
-	    wol.wake(config.sony.macwifi, function(err, result) {
-	    });
-	    wol.wake(config.sony.mac, function(err, result) {
-		console.log("wake res: " + result + " err: " + err);
-		if (err) {
-		    res.send("I can't wake TV")
-		} else {
-		    if (result) {
-			sonybravia.PowerStatus(function ResponseCallback(err, status) {
-			    console.log("TV status: " + status)
-			    if (status == "standby") {
-				sonybravia.IRcodeRequest("AAAAAQAAAAEAAAAVAw==", function ResponseCallback(err, codeResponse) {
-                		    res.send("I have switched the TV " + req.headers.powerintent);
-            			});
-			    } else {
-                		res.send("TV is already on");
-			    }
-            		});
-			
-		    } else {
-			res.send("I can't wake TV now")
-		    }
-		}
-	    });	    
+	        powerintent = 'active';
+	        wol.wake(config.sony.mac, function(err, result) {
+		        console.log("wake res: " + result + " err: " + err);
+		        if (err) {
+		            res.send("I can't wake TV")
+		        } else {
+		            if (result) {
+			            sonybravia.PowerStatus(function ResponseCallback(err, status) {
+			                console.log("TV status: " + status)
+			                if (status == "standby") {
+				                sonybravia.IRcodeRequest("AAAAAQAAAAEAAAAVAw==", function ResponseCallback(err, codeResponse) {
+                		            res.send("I have switched the TV " + req.headers.powerintent);
+                                });
+			                } else {
+                		        res.send("TV is already on");
+			                }
+            		    });
+		            } else {
+			            res.send("I can't wake TV now")
+		            }
+		        }
+	        });
             break;
         case "off":
             sonybravia.PowerStatus(function ResponseCallback(err, status) {
-		console.log("TV status: " + status)
-		if (status == "active") {
-		    sonybravia.IRcodeRequest("AAAAAQAAAAEAAAAVAw==", function ResponseCallback(err, codeResponse) {
-                	res.send("I have switched the TV " + req.headers.powerintent);
-            	    });
-		} else {
+		        console.log("TV status: " + status)
+		        if (status == "active") {
+		            sonybravia.IRcodeRequest("AAAAAQAAAAEAAAAVAw==", function ResponseCallback(err, codeResponse) {
+                	    res.send("I have switched the TV " + req.headers.powerintent);
+                    });
+		        } else {
                     res.send("TV is already off");
-		}
+		        }
             });
             powerintent = 'standby';
             break;
