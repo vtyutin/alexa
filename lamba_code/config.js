@@ -1,7 +1,7 @@
 var config = {
-    appid: "Alexa Skills Skills id. amzn1.echo-sdk-ams.app.ffffffffffff-fffffffff-fffffffff",
-    host : "<external IP of the node server> ",
-    port : "port of the external IP you natted on the firewall";
+    appid: "amzn1.ask.skill.1a1d3548-3d83-4d10-83e2-16101633f247",
+    host : "serverhaus.ddns.net",
+    port : "8181"
 };
 
 module.exports = config;
