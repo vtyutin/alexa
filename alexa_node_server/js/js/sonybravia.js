@@ -46,6 +46,13 @@ var VideoInputChange = function (inputnumber, Callback) {
       case "2": ircode = "AAAAAgAAABoAAABbAw=="; break;
       case "3": ircode = "AAAAAgAAABoAAABcAw=="; break;
       case "4": ircode = "AAAAAgAAABoAAABdAw=="; break;
+      case "5": ircode = "AAAAAQAAAAEAAAAQAw=="; break;
+    }
+
+    //If IRCODE is not located. Tell the user had trouble finding that input.
+    if(ircode == undefined) {
+        speechOutput = "I had trouble finding that input.";
+        Callback(speechOutput);
     }
 
     //If there is an IRCODE send to TV.
@@ -59,11 +66,6 @@ var VideoInputChange = function (inputnumber, Callback) {
           } 
           Callback(speechOutput);
       });
-    } 
-    //If IRCODE is not located. Tell the user had trouble finding that input.
-    if(ircode == undefined) {
-      speechOutput = "I had trouble finding that input.";
-      Callback(speechOutput);
     }
 };
 
@@ -93,6 +95,35 @@ var VolumeChange = function (isVolumeUp, inputnumber, Callback) {
         speechOutput = "I had trouble finding that input.";
     }
     Callback(speechOutput);
+};
+
+var ChannelChange = function (value, Callback) {
+    console.log("ChannelChange function called for value " + value);
+    var ircode;
+    var speechOutput;
+    switch (value) {
+        case "up": ircode = "AAAAAQAAAAEAAAAQAw=="; break;
+        case "down": ircode = "AAAAAQAAAAEAAAARAw=="; break;
+    }
+
+    //If IRCODE is not located. Tell the user had trouble finding that input.
+    if(ircode == undefined) {
+        speechOutput = "I had trouble change channel to " + value;
+        Callback(speechOutput);
+    }
+
+    //If there is an IRCODE send to TV.
+    if(ircode) {
+        console.log(ircode + " code sent to TV");
+        IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
+            if (err) {
+                speechOutput = "I had trouble processing this request. Please try again.";
+            } else {
+                speechOutput = "Channel changed " + value;
+            }
+            Callback(speechOutput);
+        });
+    }
 };
 
 var SetChannel = function (channelName, Callback) {
@@ -203,6 +234,7 @@ module.exports = {
     IRcodeRequest : IRcodeRequest,
     VideoInputChange: VideoInputChange,
     VolumeChange: VolumeChange,
+    ChannelChange: ChannelChange,
     SetChannel: SetChannel,
     PowerStatus: PowerStatus,
     CallSonyAPI: CallSonyAPI,

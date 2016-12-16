@@ -59,6 +59,10 @@ router.post('/power',function(req,res){
 router.post('/videoinput',function(req,res){
     var inputnumber = req.headers.inputnumber; 
     console.log("User request TV Input change to " + inputnumber);
+    if (inputnumber == "tv") {
+        inputnumber = "5";
+    }
+    console.log("updated input " + inputnumber);
 
     //calls the VideoInputChange function to
     sonybravia.VideoInputChange(inputnumber, function ResponseCallback(speechoutput) {
@@ -87,6 +91,17 @@ router.post('/setchannel',function(req,res){
 
     //calls the VideoInputChange function to
     sonybravia.SetChannel(channel, function ResponseCallback(speechoutput) {
+        console.log(speechoutput);
+        res.send(speechoutput);
+    });
+});
+
+router.post('/changechannel',function(req,res){
+    var value = req.headers.action;
+    console.log("User request to change channel " + value);
+
+    //calls the VideoInputChange function to
+    sonybravia.ChannelChange(value, function ResponseCallback(speechoutput) {
         console.log(speechoutput);
         res.send(speechoutput);
     });
