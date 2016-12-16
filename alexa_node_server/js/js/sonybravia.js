@@ -31,7 +31,7 @@ var IRcodeRequest = function(ircode, ResponseCallback) {
         } 
 
         else {
-            ResponseCallback(error, body);
+            ResponseCallback(undefined, body);
             console.log(response.statusCode, body);
         }
     });
@@ -120,6 +120,25 @@ var ChannelChange = function (value, Callback) {
                 speechOutput = "I had trouble processing this request. Please try again.";
             } else {
                 speechOutput = "Channel changed " + value;
+            }
+            Callback(speechOutput);
+        });
+    }
+};
+
+var SetMute = function (value, Callback) {
+    console.log("SetMute function called for value " + value);
+    var ircode = "AAAAAQAAAAEAAAAUAw==";
+    var speechOutput;
+
+    //If there is an IRCODE send to TV.
+    if(ircode) {
+        console.log(ircode + " code sent to TV");
+        IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
+            if (err != undefined) {
+                speechOutput = "I had trouble processing this request. Please try again.";
+            } else {
+                speechOutput = "Mute changed " + value;
             }
             Callback(speechOutput);
         });
@@ -235,6 +254,7 @@ module.exports = {
     VideoInputChange: VideoInputChange,
     VolumeChange: VolumeChange,
     ChannelChange: ChannelChange,
+    SetMute: SetMute,
     SetChannel: SetChannel,
     PowerStatus: PowerStatus,
     CallSonyAPI: CallSonyAPI,

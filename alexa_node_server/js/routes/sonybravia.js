@@ -107,6 +107,17 @@ router.post('/changechannel',function(req,res){
     });
 });
 
+router.post('/mute',function(req,res){
+    var mute = req.headers.mute;
+    console.log("User request to mute " + mute);
+
+    //calls the VideoInputChange function to
+    sonybravia.SetMute(mute, function ResponseCallback(speechoutput) {
+        console.log(speechoutput);
+        res.send(speechoutput);
+    });
+});
+
 // respond with "hello world" when a GET request is made to the homepage
 router.get('/', function(req, res) {
   res.send('Sony API');
