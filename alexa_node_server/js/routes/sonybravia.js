@@ -28,7 +28,7 @@ router.post('/power',function(req,res){
 			                console.log("TV status: " + status)
 			                if (status == "standby") {
 				                sonybravia.IRcodeRequest("AAAAAQAAAAEAAAAVAw==", function ResponseCallback(err, codeResponse) {
-                		            res.send("I have switched the TV " + req.headers.powerintent);
+                		            res.send("I have switched the TV on");
                                 });
 			                } else {
                 		        res.send("TV is already on");
@@ -37,6 +37,7 @@ router.post('/power',function(req,res){
 		            } else {
 			            res.send("I can't wake TV now")
 		            }
+                    res.send("I have switched the TV on");
 		        }
 	        });
             break;
@@ -45,7 +46,11 @@ router.post('/power',function(req,res){
 		        console.log("TV status: " + status)
 		        if (status == "active") {
 		            sonybravia.IRcodeRequest("AAAAAQAAAAEAAAAVAw==", function ResponseCallback(err, codeResponse) {
-                	    res.send("I have switched the TV " + req.headers.powerintent);
+                        if (err != undefined) {
+                            res.send(codeResponse);
+                        } else {
+                            res.send("I have switched the TV off");
+                        }
                     });
 		        } else {
                     res.send("TV is already off");
