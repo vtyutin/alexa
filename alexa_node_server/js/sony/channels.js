@@ -11,7 +11,7 @@ module.exports = {
     "tv center" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAAJAw=="},
     "ren tv" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAAAAw=="},
     "spas" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAABAw=="},
-    "ctc" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAACAw=="},
+    "sts" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAACAw=="},
     "home" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAADAw=="},
     "tv three" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAAEAw=="},
     "friday" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAAAw==", "ir3":"AAAAAQAAAAEAAAAFAw=="},
