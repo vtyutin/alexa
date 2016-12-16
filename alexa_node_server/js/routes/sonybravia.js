@@ -64,6 +64,19 @@ router.post('/power',function(req,res){
     }
 });
 
+router.post('/setvolume',function(req,res){
+    var volume = req.headers.volume;
+    console.log("User request volume " + volume);
+    sonybravia.SetVolume(volume, function ResponseCallback(err, status) {
+        console.log("volume status: " + status)
+        if (status != "0") {
+            res.send("I can't set volume");
+        } else {
+            res.send("volume set to " + volume);
+        }
+    });
+});
+
 router.post('/videoinput',function(req,res){
     var inputnumber = req.headers.inputnumber; 
     console.log("User request TV Input change to " + inputnumber);
@@ -79,7 +92,7 @@ router.post('/videoinput',function(req,res){
     });
 });
 
-router.post('/setvolume',function(req,res){
+router.post('/changevolume',function(req,res){
     var newvolume = req.headers.newvolume;
     var action = req.headers.action;
     console.log("User request to change volume to " + action);

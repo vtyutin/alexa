@@ -219,7 +219,41 @@ var PowerStatus = function(ResponseCallback) {
             ResponseCallback(null, body.result[0].status)
         }
     });
-};    
+};
+
+var SetVolume = function(volume, ResponseCallback) {
+    console.log("SetVolume function requested.");
+
+    request({
+        url: 'http://' + config.sony.ip + ':' + config.sony.port + '/sony/audio', //URL to hit
+        //qs: {from: 'blog example', time: +new Date()}, //Query string data
+        method: 'POST',
+        headers: {
+            'X-Auth-PSK': '0000',
+            'Content-Type': 'application/json'
+        },
+        json: {
+            "id":2,
+            "method":"setAudioVolume",
+            "version":"1.0",
+            "params":[{
+                "target":"headphone",
+                "volume":volume
+            }]
+        },
+    }, function(error, response, body){
+        if(error != undefined) {
+            console.log('communication error ' + error);
+            ResponseCallback(error, response);
+        }
+
+        else {
+            console.log(body);
+            console.log(body.result[0]);
+            ResponseCallback(null, body.result[0])
+        }
+    });
+};
 
 var CallSonyAPI = function (options, ResponseCallback) {
     console.log("Calling Sony API");
@@ -254,5 +288,6 @@ module.exports = {
     SetMute: SetMute,
     SetChannel: SetChannel,
     PowerStatus: PowerStatus,
+    SetVolume: SetVolume,
     CallSonyAPI: CallSonyAPI,
 };
