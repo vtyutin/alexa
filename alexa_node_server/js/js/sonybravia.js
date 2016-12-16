@@ -177,6 +177,7 @@ var SetChannel = function (channelName, Callback) {
                 		        speechOutput = "I had trouble processing this request. Please try again.";
             		        } else {
                 		        speechOutput = "Channel switched to " + channelName;
+                                Callback(speechOutput);
             		        }
         		        });
                     }
@@ -185,12 +186,8 @@ var SetChannel = function (channelName, Callback) {
         });       
     } else {
         speechOutput = "I had trouble finding that channel." + channelName;
+        Callback(speechOutput);
     }
-    //If IRCODE is not located. Tell the user had trouble finding that input.
-    if(speechOutput == undefined) {
-        speechOutput = "I had trouble finding that input.";
-    }
-    Callback(speechOutput);
 };
 
 var PowerStatus = function(ResponseCallback) {
