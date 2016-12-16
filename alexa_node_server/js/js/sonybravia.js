@@ -59,7 +59,7 @@ var VideoInputChange = function (inputnumber, Callback) {
     if(ircode) {
       console.log(ircode + " code sent to TV");
       IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
-          if (err) {
+          if (err != undefined) {
               speechOutput = "I had trouble processing this request. Please try again.";
           } else {
               speechOutput = "Input changed to HDMI " + inputnumber;
@@ -80,7 +80,7 @@ var VolumeChange = function (isVolumeUp, inputnumber, Callback) {
         if(ircode) {
             console.log(ircode + " code sent to TV");
             IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
-                if (err) {
+                if (err != undefined) {
                     speechOutput = "I had trouble processing this request. Please try again.";
                 } else {
                     speechOutput = "Volume " + (isVolumeUp ? "up" : "down");
@@ -116,7 +116,7 @@ var ChannelChange = function (value, Callback) {
     if(ircode) {
         console.log(ircode + " code sent to TV");
         IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
-            if (err) {
+            if (err != undefined) {
                 speechOutput = "I had trouble processing this request. Please try again.";
             } else {
                 speechOutput = "Channel changed " + value;
@@ -138,7 +138,7 @@ var SetMute = function (value, Callback) {
             if (err != undefined) {
                 speechOutput = "I had trouble processing this request. Please try again.";
             } else {
-                speechOutput = "Mute changed " + value;
+                speechOutput = "Mute changed";
             }
             Callback(speechOutput);
         });
@@ -163,22 +163,22 @@ var SetChannel = function (channelName, Callback) {
     if(ircode1 && ircode2 && ircode3) {
         console.log(ircode1 + " code sent to TV");
         IRcodeRequest(ircode1, function ResponseCallback(err, codeResponse) {
-            if (err) {
+            if (err != undefined) {
                 speechOutput = "I had trouble processing this request. Please try again.";
             } else {
                 speechOutput = "Channel switched to " + channelName;
-		IRcodeRequest(ircode2, function ResponseCallback(err, codeResponse) {
-            	    if (err) {
+		        IRcodeRequest(ircode2, function ResponseCallback(err, codeResponse) {
+            	    if (err != undefined) {
                         speechOutput = "I had trouble processing this request. Please try again.";
                     } else {
                         speechOutput = "Channel switched to " + channelName;
-			IRcodeRequest(ircode3, function ResponseCallback(err, codeResponse) {
-            		    if (err) {
-                		speechOutput = "I had trouble processing this request. Please try again.";
-            		    } else {
-                		speechOutput = "Channel switched to " + channelName;
-            		    }
-        		});
+			            IRcodeRequest(ircode3, function ResponseCallback(err, codeResponse) {
+            		        if (err != undefined) {
+                		        speechOutput = "I had trouble processing this request. Please try again.";
+            		        } else {
+                		        speechOutput = "Channel switched to " + channelName;
+            		        }
+        		        });
                     }
                 });
             }
@@ -211,7 +211,7 @@ var PowerStatus = function(ResponseCallback) {
             "params":[]
         },
     }, function(error, response, body){
-        if(error) {
+        if(error != undefined) {
             console.log('communication error ' + error);
             ResponseCallback(error, response);
         } 
