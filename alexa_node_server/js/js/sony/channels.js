@@ -1,5 +1,5 @@
 module.exports = {
-    "first" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAAAw=="},
+    "one" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAAAw=="},
     "russia" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAABAw=="},
     "sport" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAACAw=="},
     "ntv" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAADAw=="},
