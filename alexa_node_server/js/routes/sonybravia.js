@@ -78,9 +78,9 @@ router.post('/setvolume',function(req,res){
 });
 
 router.post('/videoinput',function(req,res){
-    var inputnumber = req.headers.inputnumber; 
+    var inputnumber = req.headers.inputnumber;
     console.log("User request TV Input change to " + inputnumber);
-    if (inputnumber == "tv") {
+    if (inputnumber.toLowerCase() == "tv") {
         inputnumber = "5";
     }
     console.log("updated input " + inputnumber);
