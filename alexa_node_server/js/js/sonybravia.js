@@ -169,10 +169,10 @@ var ShowGuide = function (Callback) {
 };
 
 var SetChannel = function (channelName, Callback) {
-    if (channel == 1) {
+    if (channel == '1') {
         channel = "one"
     }
-    if (channel == 5) {
+    if (channel == '5') {
         channel = "five"
     }
     console.log("SetChannel " + channelName);
