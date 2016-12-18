@@ -1,9 +1,9 @@
 module.exports = {
-    "one" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAAAw=="},
+    "1" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAAAw=="},
     "russia" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAABAw=="},
     "sport" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAACAw=="},
     "ntv" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAADAw=="},
-    "five" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAEAw=="},
+    "5" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAEAw=="},
     "culture" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAFAw=="},
     "russia twenty four" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAGAw=="},
     "carousel" : {"ir1":"AAAAAQAAAAEAAAAJAw==", "ir2":"AAAAAQAAAAEAAAAJAw==", "ir3":"AAAAAQAAAAEAAAAHAw=="},
