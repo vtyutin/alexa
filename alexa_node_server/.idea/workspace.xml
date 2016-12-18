@@ -21,21 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/routes/sonybravia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="82" column="19" lean-forward="true" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="33" />
+            <state relative-caret-position="188">
+              <caret line="66" column="23" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="413">
+              <caret line="258" column="46" lean-forward="false" selection-start-line="258" selection-start-column="46" selection-end-line="258" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -66,6 +66,9 @@
       <find>The remote endpoint could not be called, or the response it returned was invalid</find>
       <find>setvolume</find>
       <find>I had trouble</find>
+      <find>VideoInputChange</find>
+      <find>set volume func</find>
+      <find>SetVolume func</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -76,8 +79,8 @@
         <option value="$PROJECT_DIR$/../lamba_code/index.js" />
         <option value="$PROJECT_DIR$/../lamba_code/config.js" />
         <option value="$PROJECT_DIR$/js/js/sony/channels.js" />
-        <option value="$PROJECT_DIR$/js/js/sonybravia.js" />
         <option value="$PROJECT_DIR$/js/routes/sonybravia.js" />
+        <option value="$PROJECT_DIR$/js/js/sonybravia.js" />
       </list>
     </option>
   </component>
@@ -321,12 +324,12 @@
       <workItem from="1481269100418" duration="3232000" />
       <workItem from="1481614849328" duration="415000" />
       <workItem from="1481873827290" duration="2580000" />
-      <workItem from="1481881894992" duration="5322000" />
+      <workItem from="1481881894992" duration="5964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11549000" />
+    <option name="totallyTimeSpent" value="12191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="27" width="1260" height="689" extended-state="0" />
@@ -570,18 +573,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
+    <entry file="file://$PROJECT_DIR$/js/routes/sonybravia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="188">
+          <caret line="66" column="23" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/routes/sonybravia.js">
+    <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="82" column="19" lean-forward="true" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="33" />
+        <state relative-caret-position="413">
+          <caret line="258" column="46" lean-forward="false" selection-start-line="258" selection-start-column="46" selection-end-line="258" selection-end-column="46" />
           <folding />
         </state>
       </provider>

@@ -62,7 +62,11 @@ var VideoInputChange = function (inputnumber, Callback) {
           if (err != undefined) {
               speechOutput = "I had trouble processing this request. Please try again.";
           } else {
-              speechOutput = "Input changed to HDMI " + inputnumber;
+              if (inputnumber == "5") {
+                  speechOutput = "Input changed to tv";
+              } else {
+                  speechOutput = "Input changed to HDMI " + inputnumber;
+              }
           } 
           Callback(speechOutput);
       });
@@ -242,15 +246,18 @@ var SetVolume = function(volume, ResponseCallback) {
             }]
         },
     }, function(error, response, body){
-        if(error != undefined) {
+        if(error) {
             console.log('communication error ' + error);
             ResponseCallback(error, response);
         }
-
         else {
-            console.log(body);
-            console.log(body.result[0]);
-            ResponseCallback(null, body.result[0])
+            if (body != undefined) {
+                console.log(body.result[0]);
+                ResponseCallback(null, body.result[0])
+            } else {
+                console.log(body);
+                ResponseCallback("error", body)
+            }
         }
     });
 };
