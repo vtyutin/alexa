@@ -169,11 +169,11 @@ var ShowGuide = function (Callback) {
 };
 
 var SetChannel = function (channelName, Callback) {
-    if ((channel == '1') || (channel == "1") || (channel == 1) || (channel == "first") || (channel == "1st")) {
-        channel = "one"
+    if ((channelName == '1') || (channelName == "1") || (channelName == 1) || (channelName == "first") || (channelName == "1st")) {
+        channelName = "one"
     }
-    if (channel == '5') {
-        channel = "five"
+    if (channelName == '5') {
+        channelName = "five"
     }
     console.log("SetChannel " + channelName);
 
@@ -214,7 +214,7 @@ var SetChannel = function (channelName, Callback) {
             }
         });       
     } else {
-        speechOutput = "I had trouble finding that channel." + channelName;
+        speechOutput = "I had trouble finding that channel " + channelName;
         Callback(speechOutput);
     }
 };
