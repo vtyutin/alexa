@@ -149,6 +149,25 @@ var SetMute = function (value, Callback) {
     }
 };
 
+var ShowGuide = function (Callback) {
+    console.log("ShowGuide function called");
+    var ircode = "AAAAAQAAAAEAAAAOAw==";
+    var speechOutput;
+
+    //If there is an IRCODE send to TV.
+    if(ircode) {
+        console.log(ircode + " code sent to TV");
+        IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
+            if (err != undefined) {
+                speechOutput = "I had trouble processing this request. Please try again.";
+            } else {
+                speechOutput = "Guide is shown";
+            }
+            Callback(speechOutput);
+        });
+    }
+};
+
 var SetChannel = function (channelName, Callback) {
     console.log("SetChannel " + channelName);
 
@@ -293,6 +312,7 @@ module.exports = {
     VolumeChange: VolumeChange,
     ChannelChange: ChannelChange,
     SetMute: SetMute,
+    ShowGuide: ShowGuide,
     SetChannel: SetChannel,
     PowerStatus: PowerStatus,
     SetVolume: SetVolume,

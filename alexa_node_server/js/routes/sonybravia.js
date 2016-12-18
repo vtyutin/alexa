@@ -139,6 +139,16 @@ router.post('/mute',function(req,res){
     });
 });
 
+router.post('/guide',function(req,res){
+    console.log("User request to show guide");
+
+    //calls the VideoInputChange function to
+    sonybravia.ShowGuide(function ResponseCallback(speechoutput) {
+        console.log(speechoutput);
+        res.send(speechoutput);
+    });
+});
+
 // respond with "hello world" when a GET request is made to the homepage
 router.get('/', function(req, res) {
   res.send('Sony API');
