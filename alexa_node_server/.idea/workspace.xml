@@ -24,7 +24,7 @@
       <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/routes/sonybravia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="-1100">
               <caret line="66" column="23" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="23" />
               <folding />
             </state>
@@ -34,8 +34,8 @@
       <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="258" column="46" lean-forward="false" selection-start-line="258" selection-start-column="46" selection-end-line="258" selection-end-column="46" />
+            <state relative-caret-position="323">
+              <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -69,6 +69,7 @@
       <find>VideoInputChange</find>
       <find>set volume func</find>
       <find>SetVolume func</find>
+      <find>SetVolume funct</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -324,12 +325,12 @@
       <workItem from="1481269100418" duration="3232000" />
       <workItem from="1481614849328" duration="415000" />
       <workItem from="1481873827290" duration="2580000" />
-      <workItem from="1481881894992" duration="5964000" />
+      <workItem from="1481881894992" duration="6192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12191000" />
+    <option name="totallyTimeSpent" value="12419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="27" width="1260" height="689" extended-state="0" />
@@ -575,7 +576,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/routes/sonybravia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="-1100">
           <caret line="66" column="23" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="23" />
           <folding />
         </state>
@@ -583,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="258" column="46" lean-forward="false" selection-start-line="258" selection-start-column="46" selection-end-line="258" selection-end-column="46" />
+        <state relative-caret-position="323">
+          <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
           <folding />
         </state>
       </provider>

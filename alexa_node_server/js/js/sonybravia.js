@@ -46,7 +46,7 @@ var VideoInputChange = function (inputnumber, Callback) {
       case "2": ircode = "AAAAAgAAABoAAABbAw=="; break;
       case "3": ircode = "AAAAAgAAABoAAABcAw=="; break;
       case "4": ircode = "AAAAAgAAABoAAABdAw=="; break;
-      case "5": ircode = "AAAAAQAAAAEAAAAQAw=="; break;
+      case "5": ircode = "AAAAAQAAAAEAAAAkAw=="; break;
     }
 
     //If IRCODE is not located. Tell the user had trouble finding that input.
