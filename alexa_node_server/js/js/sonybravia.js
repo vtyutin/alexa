@@ -172,7 +172,7 @@ var SetChannel = function (channelName, Callback) {
     if ((channelName == '1') || (channelName == "1") || (channelName == 1) || (channelName == "first") || (channelName == "1st")) {
         channelName = "one"
     }
-    if (channelName == '5') {
+    else if (channelName == '5') {
         channelName = "five"
     }
     console.log("SetChannel " + channelName);
