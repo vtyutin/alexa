@@ -191,7 +191,7 @@ var ShowGuide = function (Callback) {
             if (err != undefined) {
                 speechOutput = "I had trouble processing this request. Please try again.";
             } else {
-                speechOutput = "Guide is shown";
+                speechOutput = "Guide is toggled";
             }
             Callback(speechOutput);
         });
