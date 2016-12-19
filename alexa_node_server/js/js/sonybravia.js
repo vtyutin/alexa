@@ -130,6 +130,35 @@ var ChannelChange = function (value, Callback) {
     }
 };
 
+var VolumeChange = function (value, Callback) {
+    console.log("VolumeChange function called for value " + value);
+    var ircode;
+    var speechOutput;
+    switch (value) {
+        case "up": ircode = "AAAAAQAAAAEAAAASAw=="; break;
+        case "down": ircode = "AAAAAQAAAAEAAAATAw=="; break;
+    }
+
+    //If IRCODE is not located. Tell the user had trouble finding that input.
+    if(ircode == undefined) {
+        speechOutput = "I had trouble change volume " + value;
+        Callback(speechOutput);
+    }
+
+    //If there is an IRCODE send to TV.
+    if(ircode) {
+        console.log(ircode + " code sent to TV");
+        IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
+            if (err != undefined) {
+                speechOutput = "I had trouble processing this request";
+            } else {
+                speechOutput = "Volume changed " + value;
+            }
+            Callback(speechOutput);
+        });
+    }
+};
+
 var SetMute = function (value, Callback) {
     console.log("SetMute function called for value " + value);
     var ircode = "AAAAAQAAAAEAAAAUAw==";
@@ -317,6 +346,7 @@ module.exports = {
     VideoInputChange: VideoInputChange,
     VolumeChange: VolumeChange,
     ChannelChange: ChannelChange,
+    VolumeChange: VolumeChange,
     SetMute: SetMute,
     ShowGuide: ShowGuide,
     SetChannel: SetChannel,

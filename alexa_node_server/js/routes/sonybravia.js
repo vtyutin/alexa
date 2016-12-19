@@ -128,6 +128,17 @@ router.post('/changechannel',function(req,res){
     });
 });
 
+router.post('/changevolume',function(req,res){
+    var value = req.headers.action;
+    console.log("User request to change volume " + value);
+
+    //calls the VideoInputChange function to
+    sonybravia.VolumeChange(value, function ResponseCallback(speechoutput) {
+        console.log(speechoutput);
+        res.send(speechoutput);
+    });
+});
+
 router.post('/mute',function(req,res){
     var mute = req.headers.mute;
     console.log("User request to mute " + mute);
