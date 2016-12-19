@@ -341,7 +341,7 @@ var SetVolume = function(volume, ResponseCallback) {
             "method":"setAudioVolume",
             "version":"1.0",
             "params":[{
-                "target":"headphone",
+                "target":"speaker",
                 "volume":volume
             }]
         },
