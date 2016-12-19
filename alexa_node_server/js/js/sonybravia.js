@@ -2,6 +2,7 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var config = require('../config');
 var channels = require('../sony/channels');
+var channelNumbers = require('../sony/numbers');
 
 var IRcodeRequest = function(ircode, ResponseCallback) {
     console.log("IRcodeRequest function called with code " + ircode);  //verifies IRcode received
@@ -248,6 +249,51 @@ var SetChannel = function (channelName, Callback) {
     }
 };
 
+var SetChannelNumber = function (channelNumber, Callback) {
+    console.log("SetChannelNumber " + channelNumber);
+
+    var ircode1;
+    var ircode2;
+    var ircode3;
+    var speechOutput;
+
+    var channel = channelNumbers[channelNumber];
+    if (channel) {
+        ircode1 = channel["ir1"];
+        ircode2 = channel["ir2"];
+        ircode3 = channel["ir3"];
+    }
+
+    if(ircode1 && ircode2 && ircode3) {
+        console.log(ircode1 + " code sent to TV");
+        IRcodeRequest(ircode1, function ResponseCallback(err, codeResponse) {
+            if (err != undefined) {
+                speechOutput = "I had trouble processing this request";
+            } else {
+                speechOutput = "Channel switched to " + channelNumber;
+                IRcodeRequest(ircode2, function ResponseCallback(err, codeResponse) {
+                    if (err != undefined) {
+                        speechOutput = "I had trouble processing this request";
+                    } else {
+                        speechOutput = "Channel switched to " + channelNumber;
+                        IRcodeRequest(ircode3, function ResponseCallback(err, codeResponse) {
+                            if (err != undefined) {
+                                speechOutput = "I had trouble processing this request";
+                            } else {
+                                speechOutput = "Channel number is " + channelNumber;
+                                Callback(speechOutput);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    } else {
+        speechOutput = "I had trouble set channel " + channelNumber;
+        Callback(speechOutput);
+    }
+};
+
 var PowerStatus = function(ResponseCallback) {
     console.log("Power Status function requested.");
 
@@ -346,6 +392,7 @@ module.exports = {
     VideoInputChange: VideoInputChange,
     VolumeChange: VolumeChange,
     ChannelChange: ChannelChange,
+    SetChannelNumber: SetChannelNumber,
     VolumeChange: VolumeChange,
     SetMute: SetMute,
     ShowGuide: ShowGuide,

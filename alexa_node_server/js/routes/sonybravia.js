@@ -128,6 +128,17 @@ router.post('/changechannel',function(req,res){
     });
 });
 
+router.post('/channel',function(req,res){
+    var value = req.headers.number;
+    console.log("User request to set channel " + value);
+
+    //calls the VideoInputChange function to
+    sonybravia.SetChannelNumber(value, function ResponseCallback(speechoutput) {
+        console.log(speechoutput);
+        res.send(speechoutput);
+    });
+});
+
 router.post('/changevolume',function(req,res){
     var value = req.headers.action;
     console.log("User request to change volume " + value);
