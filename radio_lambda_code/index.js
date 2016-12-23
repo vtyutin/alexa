@@ -9,7 +9,7 @@ var request = require('request');
 var http = require('http')
 var config = require('./config');
 
-var APP_ID = config.appid; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var APP_ID = config.appindianid;
 
 var Radio = function () {
     AlexaSkill.call(this, APP_ID);
@@ -59,7 +59,7 @@ Radio.prototype.intentHandlers = {
                 "audioItem": {
                     "stream": {
                         "token": config.token,
-                        "url": config.url,
+                        "url": config.indian_url,
                         "offsetInMilliseconds": 0
                     }
                 }
@@ -74,7 +74,7 @@ Radio.prototype.intentHandlers = {
                 "audioItem": {
                     "stream": {
                         "token": config.token,
-                        "url": config.romantika_url,
+                        "url": config.indian_url,
                         "offsetInMilliseconds": 0
                     }
                 }

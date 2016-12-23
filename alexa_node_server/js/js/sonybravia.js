@@ -351,7 +351,7 @@ var SetVolume = function(volume, ResponseCallback) {
             ResponseCallback(error, response);
         }
         else {
-            if (body != undefined) {
+            if ((body != undefined) && (body.length > 0)) {
                 console.log(body.result[0]);
                 ResponseCallback(null, body.result[0])
             } else {
