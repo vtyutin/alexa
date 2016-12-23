@@ -24,7 +24,7 @@
       <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/routes/sonybravia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
+            <state relative-caret-position="1627">
               <caret line="167" column="19" lean-forward="false" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
               <folding />
             </state>
@@ -44,8 +44,8 @@
       <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="353" column="62" lean-forward="false" selection-start-line="353" selection-start-column="62" selection-end-line="353" selection-end-column="62" />
+            <state relative-caret-position="512">
+              <caret line="353" column="37" lean-forward="false" selection-start-line="353" selection-start-column="37" selection-end-line="353" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -328,12 +328,12 @@
       <workItem from="1481614849328" duration="415000" />
       <workItem from="1481873827290" duration="2580000" />
       <workItem from="1481881894992" duration="10672000" />
-      <workItem from="1482419734267" duration="1564000" />
+      <workItem from="1482419734267" duration="1748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18463000" />
+    <option name="totallyTimeSpent" value="18647000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="26" width="1260" height="689" extended-state="0" />
@@ -618,7 +618,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/routes/sonybravia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
+        <state relative-caret-position="1627">
           <caret line="167" column="19" lean-forward="false" selection-start-line="167" selection-start-column="19" selection-end-line="167" selection-end-column="19" />
           <folding />
         </state>
@@ -626,8 +626,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="353" column="62" lean-forward="false" selection-start-line="353" selection-start-column="62" selection-end-line="353" selection-end-column="62" />
+        <state relative-caret-position="512">
+          <caret line="353" column="37" lean-forward="false" selection-start-line="353" selection-start-column="37" selection-end-line="353" selection-end-column="37" />
           <folding />
         </state>
       </provider>

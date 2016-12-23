@@ -351,7 +351,7 @@ var SetVolume = function(volume, ResponseCallback) {
             ResponseCallback(error, response);
         }
         else {
-            ResponseCallback(null, "volume set to " + volume);
+            ResponseCallback(null, "0");
         }
     });
 };
