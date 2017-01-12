@@ -56,20 +56,10 @@ Tivo.prototype.intentHandlers = {
     },
 
     VideoInputIntent: function (intent, session, response) {
-        inputnumber = intent.slots.inputnumber.value;  //grab input value from user request
-        var header = {'inputnumber': inputnumber};
+        var number = (intent.slots.number != undefined) ? intent.slots.number.value : "tv";
+        var header = {'inputnumber': number};
 
         sendCommand("/sonybravia/videoinput",header,null,function ResponseCallback(res) {
-            console.log(res);
-            response.tell(res);
-        });
-    },
-
-    VolumeIntent: function (intent, session, response) {
-        volume = intent.slots.newvolume.value;  //grab input value from user request
-        var header = {'newvolume': volume};
-
-        sendCommand("/sonybravia/setvolume",header,null,function ResponseCallback(res) {
             console.log(res);
             response.tell(res);
         });
@@ -81,6 +71,67 @@ Tivo.prototype.intentHandlers = {
         var header = {'channel': channelname};
 
         sendCommand("/sonybravia/setchannel",header,null,function ResponseCallback(res) {
+            console.log(res);
+            response.tell(res);
+        });
+    },
+
+    SetChannelIntent: function (intent, session, response) {
+        //Match name of channel to the corresponding number in channel-list.
+        var channel = intent.slots.number.value.toLowerCase();
+        var header = {'number': channel};
+
+        sendCommand("/sonybravia/channel",header,null,function ResponseCallback(res) {
+            console.log(res);
+            response.tell(res);
+        });
+    },
+
+    VolumeIntent: function (intent, session, response) {
+        //Match name of channel to the corresponding number in channel-list.
+        var volume = intent.slots.volume.value.toLowerCase();
+        var header = {'volume': volume};
+
+        sendCommand("/sonybravia/setvolume",header,null,function ResponseCallback(res) {
+            console.log(res);
+            response.tell(res);
+        });
+    },
+
+    ChangeChannelIntent: function (intent, session, response) {
+        //Match name of channel to the corresponding number in channel-list.
+        var value = intent.slots.channelaction.value.toLowerCase();
+        var header = {'action': value};
+
+        sendCommand("/sonybravia/changechannel",header,null,function ResponseCallback(res) {
+            console.log(res);
+            response.tell(res);
+        });
+    },
+
+    ChangeVolumeIntent: function (intent, session, response) {
+        //Match name of channel to the corresponding number in channel-list.
+        var value = intent.slots.channelaction.value.toLowerCase();
+        var header = {'action': value};
+
+        sendCommand("/sonybravia/changevolume",header,null,function ResponseCallback(res) {
+            console.log(res);
+            response.tell(res);
+        });
+    },
+
+    MuteIntent: function (intent, session, response) {
+        //Match name of channel to the corresponding number in channel-list.
+        var header = {'mute': "toggle"};
+
+        sendCommand("/sonybravia/mute",header,null,function ResponseCallback(res) {
+            console.log(res);
+            response.tell(res);
+        });
+    },
+
+    GuideIntent: function (intent, session, response) {
+        sendCommand("/sonybravia/guide",null,null,function ResponseCallback(res) {
             console.log(res);
             response.tell(res);
         });

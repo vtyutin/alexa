@@ -8,8 +8,9 @@ var express = require('express');
 var request = require('request');
 var http = require('http')
 var config = require('./config');
+var channel = "";
 
-var APP_ID = config.appindianid;
+var APP_ID = config.appid;
 
 var Radio = function () {
     AlexaSkill.call(this, APP_ID);
@@ -27,8 +28,8 @@ Radio.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest
 
 Radio.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("Radio onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-    var speechOutput = "Welcome to the TV Controls, I can control the TV for you.";
-    var repromptText = "You can say change channel to with the name of the channel.";
+    var speechOutput = "You can play radio romantic";
+    var repromptText = "Say play to start radio playing";
     response.ask(speechOutput, repromptText);
 };
 
@@ -51,6 +52,20 @@ Radio.prototype.intentHandlers = {
             }
         ]);
     },
+    'AMAZON.StopIntent': function (intent, session, response) {
+        response.askWithDirectives("radio channel stopped", null, [
+            {
+                "type": "AudioPlayer.Stop"
+            }
+        ]);
+    },
+    'AMAZON.CancelIntent': function (intent, session, response) {
+        response.askWithDirectives("radio channel stopped", null, [
+            {
+                "type": "AudioPlayer.Stop"
+            }
+        ]);
+    },
     'AMAZON.ResumeIntent': function (intent, session, response) {
         response.askWithDirectives("radio channel started", null, [
             {
@@ -59,7 +74,7 @@ Radio.prototype.intentHandlers = {
                 "audioItem": {
                     "stream": {
                         "token": config.token,
-                        "url": config.indian_url,
+                        "url": channel,
                         "offsetInMilliseconds": 0
                     }
                 }
@@ -67,6 +82,13 @@ Radio.prototype.intentHandlers = {
         ]);
     },
     PlayIntent: function (intent, session, response) {
+        channel = config.romantika_url;
+        /*var channelname = intent.slots.channel.value;
+        if (channelname == "bangla") {
+            channel = config.indian_url2;
+        } else if (channelname == "tamil") {
+            channel = config.indian_url3;
+        }*/
         response.askWithDirectives("radio channel started", null, [
             {
                 "type": "AudioPlayer.Play",
@@ -74,14 +96,13 @@ Radio.prototype.intentHandlers = {
                 "audioItem": {
                     "stream": {
                         "token": config.token,
-                        "url": config.indian_url,
+                        "url": channel,
                         "offsetInMilliseconds": 0
                     }
                 }
             }
         ]);
     },
-    'AMAZON.CancelIntent': function (intent, session, response) {response.ask("not supported");},
     'AMAZON.LoopOffIntent': function (intent, session, response) {response.ask("not supported");},
     'AMAZON.LoopOnIntent': function (intent, session, response) {response.ask("not supported");},
     'AMAZON.NextIntent': function (intent, session, response) {response.ask("not supported");},

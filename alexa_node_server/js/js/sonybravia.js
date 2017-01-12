@@ -74,34 +74,6 @@ var VideoInputChange = function (inputnumber, Callback) {
     }
 };
 
-var VolumeChange = function (isVolumeUp, inputnumber, Callback) {
-    console.log("VolumeChange function called for value " + inputnumber);
-
-    var ircode;
-    var speechOutput;
-    for (var index = 0; index < inputnumber; index++) {
-        ircode = isVolumeUp ? "AAAAAQAAAAEAAAASAw==" : "AAAAAQAAAAEAAAATAw==";
-        //If there is an IRCODE send to TV.
-        if(ircode) {
-            console.log(ircode + " code sent to TV");
-            IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
-                if (err != undefined) {
-                    speechOutput = "I had trouble processing this request. Please try again.";
-                } else {
-                    speechOutput = "Volume " + (isVolumeUp ? "up" : "down");
-                }
-            });
-        } else {
-            speechOutput = "I had trouble finding that volume.";
-        }
-    }
-    //If IRCODE is not located. Tell the user had trouble finding that input.
-    if(speechOutput == undefined) {
-        speechOutput = "I had trouble finding that input.";
-    }
-    Callback(speechOutput);
-};
-
 var ChannelChange = function (value, Callback) {
     console.log("ChannelChange function called for value " + value);
     var ircode;
@@ -342,6 +314,7 @@ var SetVolume = function(volume, ResponseCallback) {
             "version":"1.0",
             "params":[{
                 "target":"speaker",
+                //"target":"headphone",
                 "volume":volume
             }]
         },
