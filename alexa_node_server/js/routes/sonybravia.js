@@ -93,14 +93,11 @@ router.post('/videoinput',function(req,res){
 });
 
 router.post('/changevolume',function(req,res){
-    var newvolume = req.headers.newvolume;
     var action = req.headers.action;
     console.log("User request to change volume to " + action);
 
-    var isUp = (action == "up" ? true : false);
-
     //calls the VideoInputChange function to
-    sonybravia.VolumeChange(isUp, newvolume, function ResponseCallback(speechoutput) {
+    sonybravia.VolumeChange(action, function ResponseCallback(speechoutput) {
         console.log(speechoutput);
         res.send(speechoutput);
     });

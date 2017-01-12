@@ -51,7 +51,7 @@ Tivo.prototype.intentHandlers = {
 
         sendCommand("/sonybravia/power",header,null,function ResponseCallback(res) {
             console.log(res);
-            response.tell("Initial TV Power " + powerintent + " sent from Lambda to home server.");
+            response.tell(res);
         });
     },
 
@@ -111,8 +111,8 @@ Tivo.prototype.intentHandlers = {
 
     ChangeVolumeIntent: function (intent, session, response) {
         //Match name of channel to the corresponding number in channel-list.
-        var value = intent.slots.channelaction.value.toLowerCase();
-        var header = {'action': value};
+        var value = intent.slots.volumeaction.value.toLowerCase();
+        var header = {'action': value, "newvolume": 2};
 
         sendCommand("/sonybravia/changevolume",header,null,function ResponseCallback(res) {
             console.log(res);

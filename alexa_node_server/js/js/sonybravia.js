@@ -125,7 +125,14 @@ var VolumeChange = function (value, Callback) {
             if (err != undefined) {
                 speechOutput = "I had trouble processing this request";
             } else {
-                speechOutput = "Volume changed " + value;
+                IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
+                    if (err != undefined) {
+                        speechOutput = "I had trouble processing this request";
+                    } else {
+                        speechOutput = "Volume changed " + value;
+                    }
+                    Callback(speechOutput);
+                });
             }
             Callback(speechOutput);
         });
