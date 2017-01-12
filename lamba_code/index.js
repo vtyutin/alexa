@@ -56,7 +56,7 @@ Tivo.prototype.intentHandlers = {
     },
 
     VideoInputIntent: function (intent, session, response) {
-        var number = (intent.slots.number != undefined) ? intent.slots.number.value : "tv";
+        var number = (intent.slots.number !== undefined) ? intent.slots.number.value : "tv";
         var header = {'inputnumber': number};
 
         sendCommand("/sonybravia/videoinput",header,null,function ResponseCallback(res) {
@@ -158,7 +158,7 @@ function sendCommand(path,header,body,callback) {
 
     if (body) req.write(body);
     req.end();
-};
+}
 
 
 // Create the handler that responds to the Alexa Request.

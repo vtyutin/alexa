@@ -1,5 +1,5 @@
 var config = {
-    appid: "amzn1.ask.skill.f8b188a7-854b-4801-90d7-2bb3d5366ad8",
+    appid: "amzn1.ask.skill.1a1d3548-3d83-4d10-83e2-16101633f247",
     url : "http://radio764.streamr.ru/",
     token : "user123456"
 };
