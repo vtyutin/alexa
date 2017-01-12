@@ -44,8 +44,8 @@
       <file leaf-file-name="sonybravia.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="132" column="21" lean-forward="false" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
+            <state relative-caret-position="272">
+              <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -330,12 +330,12 @@
       <workItem from="1481881894992" duration="10672000" />
       <workItem from="1482419734267" duration="2215000" />
       <workItem from="1482740181614" duration="556000" />
-      <workItem from="1484158537912" duration="5259000" />
+      <workItem from="1484158537912" duration="5513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24929000" />
+    <option name="totallyTimeSpent" value="25183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="86" width="1260" height="689" extended-state="0" />
@@ -684,8 +684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js/sonybravia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="132" column="21" lean-forward="false" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
+        <state relative-caret-position="272">
+          <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="43" selection-end-line="131" selection-end-column="43" />
           <folding />
         </state>
       </provider>

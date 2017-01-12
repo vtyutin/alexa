@@ -116,14 +116,12 @@ var VolumeChange = function (value, Callback) {
     if(ircode == undefined) {
         speechOutput = "I had trouble change volume " + value;
         Callback(speechOutput);
-    }
-
-    //If there is an IRCODE send to TV.
-    if(ircode) {
+    } else {
         console.log(ircode + " code sent to TV");
         IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
             if (err != undefined) {
                 speechOutput = "I had trouble processing this request";
+                Callback(speechOutput);
             } else {
                 IRcodeRequest(ircode, function ResponseCallback(err, codeResponse) {
                     if (err != undefined) {
@@ -131,9 +129,9 @@ var VolumeChange = function (value, Callback) {
                     } else {
                         speechOutput = "Volume changed " + value;
                     }
+                    Callback(speechOutput);
                 });
             }
-            Callback(speechOutput);
         });
     }
 };
