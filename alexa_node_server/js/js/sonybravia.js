@@ -33,7 +33,7 @@ var IRcodeRequest = function(ircode, ResponseCallback) {
 
         else {
             ResponseCallback(undefined, body);
-            console.log(response.statusCode, body);
+            console.log("response code", response.statusCode);
         }
     });
 };  
