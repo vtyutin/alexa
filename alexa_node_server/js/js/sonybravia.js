@@ -131,7 +131,6 @@ var VolumeChange = function (value, Callback) {
                     } else {
                         speechOutput = "Volume changed " + value;
                     }
-                    Callback(speechOutput);
                 });
             }
             Callback(speechOutput);
