@@ -317,8 +317,8 @@ var SetVolume = function(volume, ResponseCallback) {
             "method":"setAudioVolume",
             "version":"1.0",
             "params":[{
-                "target":"speaker",
-                //"target":"headphone",
+                //"target":"speaker",
+                "target":"headphone",
                 "volume":volume
             }]
         },
@@ -364,7 +364,6 @@ module.exports = {
     VolumeChange: VolumeChange,
     ChannelChange: ChannelChange,
     SetChannelNumber: SetChannelNumber,
-    VolumeChange: VolumeChange,
     SetMute: SetMute,
     ShowGuide: ShowGuide,
     SetChannel: SetChannel,
